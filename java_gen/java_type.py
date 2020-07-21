@@ -313,6 +313,8 @@ u16obj = JType('U16', 'U16') \
         .op(read='U16.of(bb.readShort())', write='bb.writeShort($name.getRaw())', default="U16.ZERO")
 u32obj = JType('U32', 'U32') \
         .op(read='U32.of(bb.readInt())', write='bb.writeInt($name.getRaw())', default="U32.ZERO")
+u128obj = JType('U128', 'U128') \
+        .op(read='U128.read16Bytes(bb)', write='$name.write16Bytes(bb)', default="U128.ZERO")
 u64 = JType('U64', 'long') \
         .op(read='U64.ofRaw(bb.readLong())', write='bb.writeLong($name.getValue())', default="U64.ZERO", pub_type=True) \
         .op(read='bb.readLong()', write='bb.writeLong($name)', pub_type=False)
@@ -825,7 +827,7 @@ exceptions = {
 
         'of_oxm_noviflow_upd_payload' : { 'value' : u8obj},
         'of_oxm_noviflow_ip_payload' : { 'value' : u8obj},
-        'of_oxm_noviflow_eth_payload' : { 'value' : u8obj},
+        'of_oxm_noviflow_eth_payload' : { 'value' : u128obj},
         'of_oxm_noviflow_rxtimestamp' : { 'value' : u8obj},
         'of_oxm_noviflow_txtimestamp' : { 'value' : u8obj},
         'of_oxm_noviflow_packet_offset' : { 'value' : u8obj}

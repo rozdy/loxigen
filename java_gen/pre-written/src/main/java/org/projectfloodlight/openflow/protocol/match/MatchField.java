@@ -25,6 +25,7 @@ import org.projectfloodlight.openflow.types.PacketType;
 import org.projectfloodlight.openflow.types.U16;
 import org.projectfloodlight.openflow.types.U32;
 import org.projectfloodlight.openflow.types.U64;
+import org.projectfloodlight.openflow.types.U128;
 import org.projectfloodlight.openflow.types.U8;
 import org.projectfloodlight.openflow.types.UDF;
 import org.projectfloodlight.openflow.types.VRF;
@@ -310,8 +311,8 @@ public class MatchField<F extends OFValueType<F>> {
     public final static MatchField<U8> NOVIFLOW_IP_PAYLOAD =
             new MatchField<U8>("noviflow_ip_payload", MatchFields.NOVIFLOW_IP_PAYLOAD);
 
-    public final static MatchField<U8> NOVIFLOW_ETH_PAYLOAD =
-            new MatchField<U8>("noviflow_eth_payload", MatchFields.NOVIFLOW_ETH_PAYLOAD);
+    public final static MatchField<U128> NOVIFLOW_ETH_PAYLOAD =
+            new MatchField<U128>("noviflow_eth_payload", MatchFields.NOVIFLOW_ETH_PAYLOAD);
 
     public final static MatchField<U8> NOVIFLOW_RXTIMESTAMP =
             new MatchField<U8>("noviflow_rxtimestamp", MatchFields.NOVIFLOW_RXTIMESTAMP);
